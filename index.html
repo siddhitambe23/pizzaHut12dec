@@ -1,0 +1,54 @@
+<html>
+	<head> 
+		<title>Pizza Hut App</title>
+		<style>
+			*{font-size:50px;}
+			body{background-image: url('');}
+		input[type=radio] {
+			border : 0px;			
+			width : 2%;
+			height : 0.5m;
+
+		}
+
+		</style>
+		<script>
+		let find = () =>
+		{
+			event.preventDefault();
+			let name = document.getElementById("name");
+			let corn = document.getElementById("corn");
+			let capsicum = document.getElementById("capsicum");
+			let cheese = document.getElementById("cheese");
+			let ans = document.getElementById("ans");
+
+			let top = "";
+			if (corn.checked)         top = top + "Corn";
+			else if(capsicum.checked)     top = top + "Capsicum";
+			else                    top = top + "Cheese";
+			let msg = "name=" + name.value +"toppings="+ top;
+
+			ans.innerHTML = msg; 
+		}
+
+		</script>
+	</head>
+	<body>
+	<center>
+		<h1> Pizza Hut App</h1>
+		<form onsubmit = "find()">
+		<input type = "text" placeholder="enter name" id="name" required/>
+		<br/><br/>
+		<input type = "radio" name = "f" id="corn" checked=true/>  Corn
+		<input type = "radio" name = "f" id="capsicum" /> Capsicum
+		<input type = "radio" name = "f" id="cheese" />  Cheese
+
+		<br/><br/>
+		<input type="submit" value="Order">
+		</form>
+		<h2 id = "ans" />
+	<center/>
+	</body>
+
+
+</html>
